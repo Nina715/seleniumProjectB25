@@ -1,4 +1,4 @@
-package com.cydeo.test.day1_Selenium_Intro;
+package com.cydeo.test.day2_Selenium_getText_getAttribute;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
