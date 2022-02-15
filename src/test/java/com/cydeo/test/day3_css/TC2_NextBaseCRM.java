@@ -22,6 +22,8 @@ public class TC2_NextBaseCRM {
         if (labelText.equals(expectedText)){
             System.out.println("remember me label text pass");
         }else{
+            System.out.println("expectedText = " + expectedText);
+            System.out.println("rememberMe = " + rememberMe);
             System.out.println("remember me label text fail");
         }
         //4- Verify “forgot password” link text is as expected:
@@ -31,15 +33,19 @@ public class TC2_NextBaseCRM {
         if (forgotPasswordText.equals(expectedTxt)){
             System.out.println("forgot your password text pass");
         }else{
+            System.out.println("expectedTxt = " + expectedTxt);
+            System.out.println("forgotPasswordText = " + forgotPasswordText);
             System.out.println("forgot your password text fail");
         }
         //5- Verify “forgot password” href attribute’s value contains expected:
         String hrefValue = driver.findElement(By.className("login-link-forgot-pass")).getAttribute("href");
         //Expected: forgot_password=yes
         String expectedHrefValue = "forgot_password=yes";
-        if (hrefValue.equals(expectedHrefValue)){
+        if (hrefValue.contains(expectedHrefValue)){
             System.out.println("HREF attribute value pass");
         } else{
+            System.out.println("expectedHrefValue = " + expectedHrefValue);
+            System.out.println("hrefValue = " + hrefValue);
             System.out.println("HREF attribute value fail");
         }
 

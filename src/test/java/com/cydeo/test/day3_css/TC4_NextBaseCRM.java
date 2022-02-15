@@ -14,7 +14,7 @@ public class TC4_NextBaseCRM {
         //2- Go to: https://login1.nextbasecrm.com/?forgot_password=yes
         driver.get("https://login1.nextbasecrm.com/?forgot_password=yes");
         //3- Verify “Reset password” button text is as expected:
-        String resetPasswordText = driver.findElement(By.className("login-btn")).getAttribute("value");
+        String resetPasswordText = driver.findElement(By.cssSelector("button.login-btn")).getAttribute("value");
         //Expected: Reset password
         String expectedMsg = "Reset password";
         if (resetPasswordText.equals(expectedMsg)){
@@ -25,3 +25,4 @@ public class TC4_NextBaseCRM {
         driver.close();
     }
 }
+
