@@ -1,26 +1,14 @@
 package com.cydeo.test.day8_PropertiesConfig_reader;
 
-import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.test.base.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class FindElementTasks {
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setUp() {
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
+public class FindElementTasks extends TestBase {
 
     @Test(priority = 1)
     public void numberOfLinks() {
@@ -53,8 +41,5 @@ public class FindElementTasks {
         Assert.assertTrue(count == 240,"actual count is "+count);
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
+
 }
